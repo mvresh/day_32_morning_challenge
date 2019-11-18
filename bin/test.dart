@@ -17,8 +17,10 @@ main() {
     expect(player.restart(), 'game restarted');
     expect(player.game_over, false);
 
-    expect(player.play('e'), true);
-    expect(player.play('e'), false);
+    expect(player.play('er'), true);
+    expect(player.play('err'), false);
+    expect(player.play('rerr'), false);
+
     expect(player.game_over, true);
 
     expect(player.words.length, 1);
