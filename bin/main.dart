@@ -22,7 +22,7 @@ class Shiritori{
   bool play(String word) {
     game_over = false;
 
-    if(word.length > 1){
+    if(word.isNotEmpty){
       if(words.isEmpty){
         words.add(word);
         return true;
@@ -39,6 +39,7 @@ class Shiritori{
       }
     }
     else{
+      game_over = true;
       return false;
     }
 
@@ -55,8 +56,8 @@ class Shiritori{
 main() {
 
   Shiritori player = Shiritori();
-
-  print(player.play('hello'));
-  print(player.play('orange'));
+  print(player.words.length);
+  print(player.play('e'));
+  print(player.play('e'));
 
 }
