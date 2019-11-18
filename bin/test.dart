@@ -11,9 +11,12 @@ main() {
     expect(player.play('bye'), false);
     expect(
         player.play('there'), false); // as the game is over and not restarted
+    expect(player.words.length,3);
 
     expect(player.restart(), 'game restarted');
 
     expect(player.play('there'), true);
+    expect(player.words.length,1);
+
   });
 }
