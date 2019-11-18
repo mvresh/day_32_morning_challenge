@@ -19,7 +19,7 @@
 class Shiritori{
   List words;
   bool game_over;
-  void play() {}
+  bool play(String word) {}
   void restart() {}
 }
 
