@@ -17,8 +17,8 @@ main() {
     expect(player.restart(), 'game restarted');
     expect(player.game_over, false);
 
-    expect(player.play('there'), true);
-    expect(player.play('there'), false);
+    expect(player.play('e'), true);
+    expect(player.play('e'), false);
     expect(player.game_over, true);
 
     expect(player.words.length, 1);
