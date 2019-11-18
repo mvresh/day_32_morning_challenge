@@ -17,13 +17,41 @@
 // game_over boolean to false. It should return "game restarted".
 // rahul
 class Shiritori{
-  List words;
+  List<String> words = [];
   bool game_over;
-  bool play(String word) {}
-  String restart() {}
+  bool play(String word) {
+    game_over = false;
+    if(words.isEmpty){
+      words.add(word);
+      return true;
+    }
+    else{
+      print(words.last);
+      if(words.contains(word) != true && words.last[(words.last.length)-1] == word[0]){
+        words.add(word);
+        return true;
+      }
+      else{
+        game_over = true;
+        return false;
+      }
+      return words.last[(words.last.length)-1] == word[0] ? true : false;
+    }
+  }
+  String restart() {
+    words.clear();
+    game_over = false;
+    return "game restarted";
+  }
 }
 
 
 
 main() {
+
+  Shiritori player = Shiritori();
+
+  print(player.play('hello'));
+  print(player.play('orange'));
+
 }
