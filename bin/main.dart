@@ -18,17 +18,16 @@
 // rahul
 class Shiritori{
   List<String> words = [];
-  bool game_over;
+  bool game_over = false;
   bool play(String word) {
-    game_over = false;
-
-    if(word.isNotEmpty){
+    if(word.isNotEmpty && game_over == false){
       if(words.isEmpty){
         words.add(word);
         return true;
       }
       else{
         if(words.contains(word) != true && words.last[(words.last.length)-1] == word[0]){
+          print('came here');
           words.add(word);
           return true;
         }
@@ -57,7 +56,9 @@ main() {
 
   Shiritori player = Shiritori();
   print(player.words.length);
-  print(player.play('e'));
-  print(player.play('e'));
+  print(player.play('er'));
+  print(player.play('err'));
+  print(player.game_over);
+  print(player.play('rerr'));
 
 }
